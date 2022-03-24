@@ -1,20 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<h1>Weather Dashboard</h1>
-<body>
-<div class="search">
-    <h2>Search for a City:</h2>
-    <input type="text" id="search-box" placeholder="San Diego">
-    <button>Search</button>
-</div>    
-<div class="current-city"></div> 
-<script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather Dashboard</title>
+  </head>
+
+  <body>
+    <header class="header bg-dark">
+      <h1>Weather Dashboard</h1>
+    </header>
+    <div class="container">
+      <div class="row">
+
+        <div class="col-sm-12 col-lg-3">
+          
+          <form id="city-form">
+            <label for="city-input">Search for a city:</label><br>
+            <input type="text" id="city-input">
+            <button type="submit" id="new-city" class="btn btn-primary btn-sm">Search
+              <i class="fa fa-search"></i>
+            </button>
+            <button id="remove-city" type="button" class="btn btn-primary btn-sm" title="clear list">Clear</button>
+          </form>
+          <div id="all-city"></div>
+        </div>
+        <div class="col-sm-12 col-lg-9">
+          <div class="card">
+            <div class="card-body">
+              <h1 id="city-name">______</h1>
+              <p>Temperature: <span id="city-temp"></span> &deg;F</p>
+              <p>Humidity: <span id="city-humid"></span>%</p>
+              <p>Wind Speed: <span id="city-wind"></span> MPH</p>
+              <p>Condition: <span id="city-condition"></span></p>
+            </div>
+          </div>
+          <div>
+            <h1>5 Day Forecast:</h1>
+          </div>
+          <div class="stack" id="five-day-deck">
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
